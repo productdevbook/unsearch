@@ -14,7 +14,7 @@ unsearch is a simple library designed to add flexible search functionality to yo
 
 ## Video
 
-[![unsearch](.github/assets/video-ss.png)](.github/assets/video.mp4)
+[![unsearch](.github/assets/video-ss.png)](https://github.com/productdevbook/unsearch/raw/main/.github/assets/video.mp4)
 
 ## Installation
 
