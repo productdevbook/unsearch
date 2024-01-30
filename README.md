@@ -4,13 +4,29 @@ unsearch is a simple library designed to add flexible search functionality to yo
 
 ## Features
 
-- Pluggable architecture ([andScope, orScope, sortScope, limitScope, offsetScope])
+- Pluggable architecture
+  - Plugins
+    - [x] andScope / AND
+    - [x] orScope / OR
+    - [x] orderByScope / asc:xx, desc:xx asc:[xx, xx], desc:[xx, xx]
+    - [x] textScope / hello world
+    - [x] twoPointScope / xx:xx yy:yy
+    - [ ] limitScope
+    - [ ] offsetScope
 - key:value scope search
 - asc:key or desc:key sort search
 - limit:count limit search (soon)
 - offset:count offset search (soon)
 - key:value OR key:value orScope search
 - key:value AND key:value andScope search
+
+<p>
+      <a href="https://www.npmjs.com/package/unsearch"><img src="https://img.shields.io/npm/v/unsearch.svg?style=flat&colorA=002438&colorB=28CF8D" alt="Version"></a>
+      <a href="https://www.npmjs.com/package/unsearch"><img src="https://img.shields.io/npm/dm/unsearch.svg?style=flat&colorA=002438&colorB=28CF8D" alt="Downloads"></a>
+      <a href="./LICENSE"><img src="https://img.shields.io/github/license/productdevbookcom/unsearch.svg?style=flat&colorA=002438&colorB=28CF8D" alt="License"></a>
+      <a href="https://github.com/productdevbook/unsearch">
+      <img src="https://img.shields.io/github/stars/productdevbookcom/unsearch.svg?style=social&label=Star&maxAge=2592000" alt="Github Stars"> </a>
+</p>
 
 ## Video
 
@@ -25,6 +41,20 @@ pnpm add unsearch
 ## Usage
 
 - [Drizzle ORM Example](/playground/drizzle.ts)
+
+### Search Text
+Here is an example of a search text.
+
+```ts
+const example1 = 'name:john'
+const example2 = 'name:john age:20'
+const example3 = 'name:john age:20 OR name:doe age:30'
+const example4 = 'name:john age:20 AND name:doe age:30'
+const example5 = 'name:john asc:age'
+const example6 = 'name:john desc:age'
+const example8 = 'name:john AND email:test@gmail.com asc:age name:doe OR age:30'
+const example7 = 'name:john asc:age limit:10' // soon
+```
 
 ## TODO
 
@@ -74,4 +104,4 @@ pnpm add unsearch
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT License © 2022-PRESENT [productdevbook](https://github.com/productdevbook)
