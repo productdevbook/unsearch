@@ -104,4 +104,4 @@ const example7 = 'name:john asc:age limit:10' // soon
 
 ## License
 
-MIT License © 2022-PRESENT [productdevbook](https://github.com/productdevbook)
+MIT License © 2024-PRESENT [productdevbook](https://github.com/productdevbook)
