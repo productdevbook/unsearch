@@ -10,7 +10,7 @@ unsearch is a simple library designed to add flexible search functionality to yo
     - [x] orScope / OR
     - [x] orderByScope / asc:xx, desc:xx asc:[xx, xx], desc:[xx, xx]
     - [x] textScope / hello world
-    - [x] twoPointScope / xx:xx yy:yy
+    - [x] twoPointScope / xx:xx yy:yy xx:>yy xx:>=yy xx:<yy xx:<=yy xx:<like>yy xx:<ilike>yy and more
     - [ ] limitScope
     - [ ] offsetScope
 - key:value scope search
@@ -47,6 +47,8 @@ Here is an example of a search text.
 
 ```ts
 const example1 = 'name:john'
+const example2 = 'test name:john'
+const example3 = 'name:>john' // 'name:>=john' 'name:<john' 'name:<=john' 'name:<like>john' 'name:<ilike>john'
 const example2 = 'name:john age:20'
 const example3 = 'name:john age:20 OR name:doe age:30'
 const example4 = 'name:john age:20 AND name:doe age:30'
