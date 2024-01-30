@@ -12,6 +12,10 @@ unsearch is a simple library designed to add flexible search functionality to yo
 - key:value OR key:value orScope search
 - key:value AND key:value andScope search
 
+## Video
+
+[![unsearch](.github/assets/video-ss.png)](.github/assets/video.mp4)
+
 ## Installation
 
 ```bash
