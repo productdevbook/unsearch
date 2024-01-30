@@ -84,16 +84,6 @@ const example7 = 'name:john asc:age limit:10' // soon
 7. Run `pnpm test` to run the tests. (You can also run `pnpm test:watch` to run the tests in watch mode.)
 8. Run `pnpm release` to bump the version. Terminal will ask you to select the version type. And then it will automatically commit and push the changes. GitHub Actions will automatically publish git tags. NPM local registry will automatically publish the package.
 
-## Configuration
-
-### Renovate
-
-[Setup Github App](https://github.com/apps/renovate) for Renovate.
-
-### TS Config Base
-
-(tsconfig.json)[https://github.com/tsconfig/bases/tree/main/bases] is used as the base config for the Typescript compiler.
-
 ## Sponsors
 
 <p align="center">
