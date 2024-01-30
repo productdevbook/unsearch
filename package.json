@@ -54,6 +54,7 @@
     "drizzle-orm": "^0.29.3",
     "eslint": "^8.56.0",
     "lint-staged": "^15.2.0",
+    "postgres": "^3.4.3",
     "simple-git-hooks": "^2.9.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",

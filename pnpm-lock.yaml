@@ -19,13 +19,16 @@ importers:
         version: 9.3.0
       drizzle-orm:
         specifier: ^0.29.3
-        version: 0.29.3
+        version: 0.29.3(postgres@3.4.3)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       lint-staged:
         specifier: ^15.2.0
         version: 15.2.0
+      postgres:
+        specifier: ^3.4.3
+        version: 3.4.3
       simple-git-hooks:
         specifier: ^2.9.0
         version: 2.9.0
@@ -1483,7 +1486,7 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /drizzle-orm@0.29.3:
+  /drizzle-orm@0.29.3(postgres@3.4.3):
     resolution: {integrity: sha512-uSE027csliGSGYD0pqtM+SAQATMREb3eSM/U8s6r+Y0RFwTKwftnwwSkqx3oS65UBgqDOM0gMTl5UGNpt6lW0A==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -1553,6 +1556,8 @@ packages:
         optional: true
       sqlite3:
         optional: true
+    dependencies:
+      postgres: 3.4.3
     dev: true
 
   /eastasianwidth@0.2.0:
@@ -3178,6 +3183,11 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /postgres@3.4.3:
+    resolution: {integrity: sha512-iHJn4+M9vbTdHSdDzNkC0crHq+1CUdFhx+YqCE+SqWxPjm+Zu63jq7yZborOBF64c8pc58O5uMudyL1FQcHacA==}
+    engines: {node: '>=12'}
     dev: true
 
   /prelude-ls@1.2.1:

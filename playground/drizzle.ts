@@ -15,6 +15,11 @@ import {
   or,
 } from 'drizzle-orm'
 import { pgTable, serial, varchar } from 'drizzle-orm/pg-core'
+import postgres from 'postgres'
+import { drizzle } from 'drizzle-orm/postgres-js'
+
+const queryClient = postgres('postgres://postgres:adminadmin@0.0.0.0:5432/db')
+const db = drizzle(queryClient)
 
 export const user = pgTable('user', {
   id: serial('id').primaryKey(),
@@ -47,18 +52,34 @@ const scopeTags = {
 
 const scopeTagsArray = ['OR', 'AND', '<like>', '<ilike>', '>=', '<=', '>', '<', '!=', '=']
 
-unSearch({
-  columKeys,
-  scopeTags,
-  scopeTagsArray,
-  search: 'username:admin AND',
-  default: {
-    filterText: Object.keys(columKeys).map((key) => {
-      return {
-        column: columKeys[key as keyof typeof columKeys],
-        filter: '<ilike>',
-        key,
-      }
-    }),
-  },
-})
+async function search(query: string) {
+  const { config } = await unSearch({
+    columKeys,
+    scopeTags,
+    scopeTagsArray,
+    search: query,
+    default: {
+      filterText: Object.keys(columKeys).map((key) => {
+        return {
+          column: columKeys[key as keyof typeof columKeys],
+          filter: '<ilike>',
+          key,
+        }
+      }),
+    },
+  })
+
+  const data = db.select().from(user)
+    .where(
+      or(
+        ...config._data?.wheres || [],
+      ),
+    )
+    .orderBy(
+      ...config._data?.orderBy || [],
+    )
+
+  console.warn(data)
+}
+
+search('username:foo AND email:bar')
