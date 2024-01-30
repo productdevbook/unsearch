@@ -1,20 +1,24 @@
 {
-  "name": "ts-bundle-template",
+  "name": "unsearch",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@8.10.0",
-  "description": "add description",
-  "author": "add author",
+  "description": "Unsearch smart key:value scope all database search. Compatible with any database.",
+  "author": "Mehmet - productdevbook <hi@productdevbook.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/productdevbook",
-  "homepage": "https://github.com/productdevbookcom/ts-bundle-template",
+  "homepage": "https://github.com/productdevbook/unsearch",
   "repository": {
     "type": "git",
-    "url": "https://github.com/productdevbookcom/ts-bundle-template.git"
+    "url": "https://github.com/productdevbook/unsearch.git"
   },
-  "bugs": "https://github.com/productdevbookcom/ts-bundle-template/issues",
+  "bugs": "https://github.com/productdevbook/unsearch/issues",
   "keywords": [
-    "add keywords"
+    "github search syntax",
+    "stackoverflow search syntax",
+    "key value search",
+    "global search",
+    "drizzle search"
   ],
   "exports": {
     ".": {
@@ -47,6 +51,7 @@
     "@antfu/eslint-config": "2.6.3",
     "@vitest/coverage-v8": "^1.2.2",
     "bumpp": "^9.3.0",
+    "drizzle-orm": "^0.29.3",
     "eslint": "^8.56.0",
     "lint-staged": "^15.2.0",
     "simple-git-hooks": "^2.9.0",

@@ -1,22 +1,24 @@
-# Typescript Bundle Template
+# unsearch
 
-![Typescript Bundle Template](https://github.com/productdevbookcom/assets/blob/main/ts-bundle-template.jpg?raw=true)
-
-This is a template for creating a Typescript bundle. It is based on the [Typescript](https://www.typescriptlang.org/) compiler with the [Tsup](https://github.com/egoist/tsup) bundler.
+unsearch is a simple library designed to add flexible search functionality to your own APIs and databases.
 
 ## Features
 
-- [x] [Typescript](https://www.typescriptlang.org/)
-- [x] [Tsup](https://github.com/egoist/tsup)
-- [x] [ESLint](https://eslint.org/) with [Antfu's ESLint Config](https://github.com/antfu/eslint-config)
-- [x] [Bumpp](https://github.com/antfu/bumpp) github changelog generator
-- [x] [Vitest](https://vitest.dev/)
-- [x] [Pnpm](https://pnpm.io/)
-- [x] [GitHub Actions]()
-- [x] [NPM Local Registry]()
-- [x] [Renovate]()
+- Pluggable architecture ([andScope, orScope, sortScope, limitScope, offsetScope])
+- key:value scope search
+- asc:key or desc:key sort search
+- limit:count limit search (soon)
+- offset:count offset search (soon)
+- key:value OR key:value orScope search
+- key:value AND key:value andScope search
 
-## Usage
+## Installation
+
+```bash
+pnpm add unsearch
+```
+
+## Development
 
 1. To use this template, click the "Use this template" button above.
 2. Clone the repository to your local machine.
