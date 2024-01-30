@@ -18,6 +18,27 @@ unsearch is a simple library designed to add flexible search functionality to yo
 pnpm add unsearch
 ```
 
+## Usage
+
+- [Drizzle ORM Example](/playground/drizzle.ts)
+
+## TODO
+
+- [ ] Add limitScope
+- [ ] Add offsetScope
+- [ ] Usege examples
+  - [ ] Prisma
+  - [ ] TypeORM
+  - [ ] Sequelize
+  - [ ] Knex
+  - [ ] Postgres
+  - [ ] MySQL
+  - [ ] MongoDB
+  - [ ] SQLite
+  - [ ] MariaDB
+- [ ] Add more tests
+- [ ] Add more docs
+
 ## Development
 
 1. To use this template, click the "Use this template" button above.
