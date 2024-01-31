@@ -1,7 +1,7 @@
 {
   "name": "unsearch",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@8.10.0",
   "description": "Unsearch smart key:value scope all database search. Compatible with any database.",
   "author": "Mehmet - productdevbook <hi@productdevbook.com>",
