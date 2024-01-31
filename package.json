@@ -45,7 +45,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.6.3",
