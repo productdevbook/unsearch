@@ -11,18 +11,18 @@ const columKeys = {
 
 // POSTGRESS SQL TEST
 const scopeTags = {
-  '=': (key: string, value: string) => `SELECT * FROM WHERE ${key} = ${value}`,
-  '!=': (key: string, value: string) => `SELECT * FROM WHERE ${key} != ${value}`,
-  '>': (key: string, value: string) => `SELECT * FROM WHERE ${key} > ${value}`,
-  '>=': (key: string, value: string) => `SELECT * FROM WHERE ${key} >= ${value}`,
-  '<': (key: string, value: string) => `SELECT * FROM WHERE ${key} < ${value}`,
-  '<=': (key: string, value: string) => `SELECT * FROM WHERE ${key} <= ${value}`,
-  '<like>': (key: string, value: string) => `SELECT * FROM WHERE ${key} LIKE %${value}%`,
-  '<ilike>': (key: string, value: string) => `SELECT * FROM WHERE ${key} ILIKE %${value}%`,
-  'OR': (...args: any[]) => `SELECT * FROM WHERE ${args.join(' OR ')}`,
-  'AND': (...args: any[]) => `SELECT * FROM WHERE ${args.join(' AND ')}`,
-  'asc': (key: string) => `SELECT * FROM ORDER BY ${key} ASC`,
-  'desc': (key: string) => `SELECT * FROM ORDER BY ${key} DESC`,
+  '=': (key: string, value: string) => `${key} = ${value}`,
+  '!=': (key: string, value: string) => `${key} != ${value}`,
+  '>': (key: string, value: string) => `${key} > ${value}`,
+  '>=': (key: string, value: string) => `${key} >= ${value}`,
+  '<': (key: string, value: string) => `${key} < ${value}`,
+  '<=': (key: string, value: string) => `${key} <= ${value}`,
+  '<like>': (key: string, value: string) => `${key} LIKE %${value}%`,
+  '<ilike>': (key: string, value: string) => `${key} ILIKE %${value}%`,
+  'OR': (...args: any[]) => `${args.join(' OR ')}`,
+  'AND': (...args: any[]) => `${args.join(' AND ')}`,
+  'asc': (key: string) => `ORDER BY ${key} ASC`,
+  'desc': (key: string) => `ORDER BY ${key} DESC`,
 }
 
 const scopeTagsArray = ['OR', 'AND', '<like>', '<ilike>', '>=', '<=', '>', '<', '!=', '=']
@@ -50,7 +50,7 @@ describe('suite', () => {
     const data = await search('username:admin')
 
     expect(data.config._data?.wheres).toEqual([
-      'SELECT * FROM WHERE user.username ILIKE %admin%',
+      'user.username ILIKE %admin%',
     ])
 
     expect(data.config._data?.orderBy).toEqual([])
@@ -60,7 +60,17 @@ describe('suite', () => {
     const data = await search('username:admin AND email:admin')
 
     expect(data.config._data?.wheres).toEqual([
-      'SELECT * FROM WHERE SELECT * FROM WHERE user.username ILIKE %admin% AND SELECT * FROM WHERE user.email ILIKE %admin%',
+      'user.username ILIKE %admin% AND user.email ILIKE %admin%',
+    ])
+
+    expect(data.config._data?.orderBy).toEqual([])
+  })
+
+  it.concurrent('concurrent test 3', async () => {
+    const data = await search('username:admin OR email:admin')
+
+    expect(data.config._data?.wheres).toEqual([
+      'user.username ILIKE %admin% OR user.email ILIKE %admin%',
     ])
 
     expect(data.config._data?.orderBy).toEqual([])
